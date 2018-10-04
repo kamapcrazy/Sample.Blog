@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "experimentalDecorators": true,
+        "lib": [
+            "dom",
+            "es6",
+            "es7"
+        ]
+    }
+}
