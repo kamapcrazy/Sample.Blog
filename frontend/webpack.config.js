@@ -66,16 +66,16 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
-        // new CopyWebpackPlugin([{
-        //     from: helpers.root('src', 'assets'),
-        //     to: helpers.root('dist', 'assets')
-        // }]),
+        new CopyWebpackPlugin([{
+            from: helpers.root('src', 'assets'),
+            to: helpers.root('dist', 'assets')
+        }]),
         new HtmlWebPackPlugin({
             template: helpers.root('src', 'index.html'),
             filename: helpers.root('dist', 'index.html')
         }),
         new MiniCssExtractPlugin({
-            filename: 'assets/styles/[name].css',
+            filename: '[name].css',
             chunkFilename: '[id].css',
         }),
         new AngularCompilerPlugin({

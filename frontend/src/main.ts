@@ -1,5 +1,5 @@
 import 'zone.js';
-import './assets/styles/main.css'
+import './main.css'
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
