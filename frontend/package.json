@@ -4,9 +4,9 @@
   "description": "this is kamapcrazy app",
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack --mode development",
+    "build:dev": "webpack --mode development --progress",
     "build": "webpack --mode production",
-    "start:dev": "webpack-dev-server --mode development --watch"
+    "start:dev": "webpack-dev-server --mode development --watch --progress"
   },
   "keywords": [],
   "author": "",

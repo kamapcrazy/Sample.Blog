@@ -17,7 +17,7 @@ module.exports = {
         main: helpers.root('src', 'main.ts')
     },
     resolve: {
-        extensions: ['.js', '.ts', '.html']
+        extensions: ['.ts', '.js', '.html']
     },
     output: {
         path: helpers.root('dist'),
@@ -32,16 +32,12 @@ module.exports = {
     },
     module: {
         rules: [{
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
-            },
-            {
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ]
+            }, {
                 test: /\.html$/,
                 use: [{
                     loader: 'html-loader',
@@ -51,11 +47,14 @@ module.exports = {
                 }]
             },
             {
-                test: /\.(sa|sc|c)ss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader'
-                ]
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             },
             {
                 test: /\.ts$/,

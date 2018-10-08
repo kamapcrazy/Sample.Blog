@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
+
+    public message: string
+
     constructor() { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.message = "this is a message from app component 123"
+    }
 }
